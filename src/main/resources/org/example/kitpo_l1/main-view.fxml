@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.example.kitpo_l1.TreeViewPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.kitpo_l1.MainController">
+    <top>
+        <VBox spacing="6">
+            <padding>
+                <Insets top="8" right="8" bottom="8" left="8"/>
+            </padding>
+
+            <HBox spacing="8">
+                <Label text="Тип:"/>
+                <ComboBox fx:id="typeComboBox" prefWidth="180"/>
+                <Label text="Значение:"/>
+                <TextField fx:id="inputField" promptText="введите значение (Point: x y, Date: YYYY-MM-DD, Int: 5)" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="addBtn" text="Добавить" onAction="#onAdd"/>
+                <Button fx:id="removeBtn" text="Удалить" onAction="#onRemove"/>
+            </HBox>
+
+            <HBox spacing="8">
+                <Button fx:id="balanceBtn" text="Балансировать" onAction="#onBalance"/>
+                <Button fx:id="saveBtn" text="Сохранить" onAction="#onSave"/>
+                <Button fx:id="loadBtn" text="Загрузить" onAction="#onLoad"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Статус:"/>
+                <Label fx:id="statusLabel" text="Готово."/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="8">
+            <ListView fx:id="treeView" HBox.hgrow="ALWAYS" prefWidth="300"/>
+            <TreeViewPane fx:id="treeCanvas" HBox.hgrow="ALWAYS" prefWidth="600"/>
+        </HBox>
+    </center>
+
+    <padding>
+        <Insets top="6" right="6" bottom="6" left="6"/>
+    </padding>
+</BorderPane>
